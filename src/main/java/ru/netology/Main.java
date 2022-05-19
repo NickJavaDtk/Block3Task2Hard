@@ -36,6 +36,8 @@ public class Main {
             String body = new String(response.getEntity( ).getContent( ).readAllBytes( ), StandardCharsets.UTF_8);
             ApiNasa nasa = mapper.readValue(body, ApiNasa.class);
             fileRecord(nasa.getUrl( ));
+            httpClient.close();
+            response.close();
 
         } catch (IOException e) {
             e.printStackTrace( );
