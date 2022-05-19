@@ -3,6 +3,7 @@ package ru.netology;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ApiNasa {
+    private String copyright;
     private String date;
     private String explanation;
     private String hdurl;
@@ -11,10 +12,11 @@ public class ApiNasa {
     private String title;
     private String url;
 
-    public ApiNasa(@JsonProperty("date") String date, @JsonProperty("explanation") String explanation,
+    public ApiNasa(@JsonProperty("copyright") String copyright, @JsonProperty("date") String date, @JsonProperty("explanation") String explanation,
                    @JsonProperty("hdurl") String hdurl, @JsonProperty("media_type") String media_type,
                    @JsonProperty("service_version") String service_version, @JsonProperty("title") String title,
                    @JsonProperty("url") String url) {
+        this.copyright = copyright;
         this.date = date;
         this.explanation = explanation;
         this.hdurl = hdurl;
@@ -38,6 +40,10 @@ public class ApiNasa {
 
     public String getMedia_type() {
         return media_type;
+    }
+
+    public String getCopyright() {
+        return copyright;
     }
 
     public String getService_version() {
